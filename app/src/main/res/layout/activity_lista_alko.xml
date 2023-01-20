@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tlo_alko"
     android:orientation="vertical"
     >
 
@@ -10,53 +12,141 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ilość alkoholu"
-        android:gravity="center"/>
+        android:background="#9CC3B6B6"
+        android:gravity="center"
+        android:text="Ilość alkoholu"
+        android:textColor="#E8040302"
+        android:textSize="24sp" />
 
 
-
-    <EditText
-        android:id="@+id/editTextWino"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="wino (18%) ml"
-        android:inputType="number" />
+        android:layout_height="140dp"
+        android:layout_marginTop="5sp"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextPiwo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="piwo(5%) ml"
-        android:ems="10"
-        android:inputType="number" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:paddingLeft="5dp"
+            android:layout_weight="1"
+            android:background="#9CC3B6B6"
+            android:text="Wino (18%)"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextWodka"
+        <EditText
+            android:id="@+id/editTextWino"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:paddingLeft="7sp"
+            android:background="#59A57F7F"
+            android:ems="10"
+            android:hint="Podaj ilość w mililitrach"
+            android:inputType="number"
+            android:textColorHint="#FFFFFF" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="Wódka (40%)ml"
-        android:inputType="number" />
-    <EditText
-        android:id="@+id/editTextSmakowa"
+        android:layout_height="140dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:paddingLeft="5dp"
+            android:layout_weight="1"
+            android:background="#9CC3B6B6"
+            android:text="Piwo (5%)"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextPiwo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:paddingLeft="7sp"
+            android:background="#59A57F7F"
+            android:ems="10"
+            android:hint="Podaj ilość w mililitrach"
+            android:inputType="number"
+            android:textColorHint="#FFFFFF" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="wódka smakowa (30%) ml"
-        android:inputType="number"
-        />
+        android:layout_height="140dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:paddingLeft="5dp"
+            android:layout_weight="1"
+            android:background="#9CC3B6B6"
+            android:text="Wódka (40%)"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextWodka"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:paddingLeft="7sp"
+            android:background="#59A57F7F"
+            android:ems="10"
+            android:hint="Podaj ilość w mililitrach"
+            android:inputType="number"
+            android:textColorHint="#FFFFFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:paddingLeft="5dp"
+            android:layout_weight="1"
+            android:background="#9CC3B6B6"
+            android:text="Wódka smakowa(30%)"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextSmakowa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:paddingLeft="7sp"
+            android:background="#59A57F7F"
+            android:ems="10"
+            android:hint="Podaj ilość w mililitrach"
+            android:inputType="number"
+            android:textColorHint="#FFFFFF" />
+
+    </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inny rodzaj alkoholu"
-        android:textSize="20sp"
+        android:layout_marginTop="13sp"
+        android:background="#9CC3B6B6"
         android:gravity="center"
-        />
+        android:text="Inny rodzaj alkoholu"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,20 +158,29 @@
             android:id="@+id/editIloscCustom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4sp"
+            android:layout_marginRight="1sp"
             android:layout_weight="1"
+            android:background="#59A57F7F"
             android:ems="10"
-            android:hint="ml"
-            android:inputType="number" />
+            android:hint="Podaj ilość w ml"
+            android:inputType="number"
+            android:textAlignment="center"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
             android:id="@+id/editTextProcentyCustom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4sp"
+            android:layout_marginLeft="1sp"
             android:layout_weight="1"
+            android:background="#59A57F7F"
             android:ems="10"
+            android:hint="Ile %"
             android:inputType="number"
-            android:hint="Alkohol(%)"
-            />
+            android:textAlignment="center"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
 
@@ -89,7 +188,9 @@
         android:id="@+id/buttonDalej"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
         android:layout_gravity="right"
-        android:text="oblicz" />
+        android:text="oblicz"
+        android:layout_marginRight="15sp"/>
 
 </LinearLayout>
