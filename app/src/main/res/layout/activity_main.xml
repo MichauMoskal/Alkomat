@@ -37,8 +37,11 @@
 
             <NumberPicker
                 android:id="@+id/number_picker_waga"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35sp"
+                android:layout_marginRight="35sp"
+                android:background="#4FAEA7A7" />
         </LinearLayout>
 
         <LinearLayout
@@ -61,9 +64,11 @@
 
             <NumberPicker
                 android:id="@+id/number_picker_godziny"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp" />
+                android:layout_marginLeft="35sp"
+                android:layout_marginRight="35sp"
+                android:background="#4FAEA7A7" />
         </LinearLayout>
 
         <LinearLayout
