@@ -13,18 +13,17 @@
         android:layout_height="244dp"
         android:layout_weight="2"
         android:layout_marginRight="0dp"
-        android:background="@drawable/tlo_main4"
+        android:background="@drawable/tlo_main7"
         android:orientation="horizontal"
         android:padding="15sp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginRight="3sp"
-            android:background="#6F887B7B"
-            android:orientation="vertical"
-            >
+            android:layout_weight="1"
+            android:background="#6F373232"
+            android:orientation="vertical">
 
             <TextView
                 style="@style/Small"
@@ -33,7 +32,8 @@
                 android:layout_margin="0sp"
                 android:background="#9CC3B6B6"
                 android:text="Waga (kg):"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#000000" />
 
             <NumberPicker
                 android:id="@+id/number_picker_waga"
@@ -41,18 +41,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="35sp"
                 android:layout_marginRight="35sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginBottom="25sp"
                 android:background="#4FAEA7A7" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginLeft="3sp"
             android:layout_marginRight="3sp"
-            android:background="#6F887B7B"
-            android:orientation="vertical"
-            >
+            android:layout_weight="1"
+            android:background="#6F373232"
+            android:orientation="vertical">
 
             <TextView
                 style="@style/Small"
@@ -60,7 +61,8 @@
                 android:layout_height="wrap_content"
                 android:background="#9CC3B6B6"
                 android:text="Ile godzin piłeś?"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#000000" />
 
             <NumberPicker
                 android:id="@+id/number_picker_godziny"
@@ -68,17 +70,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="35sp"
                 android:layout_marginRight="35sp"
+                android:layout_marginTop="25sp"
+                android:layout_marginBottom="25sp"
                 android:background="#4FAEA7A7" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginLeft="3sp"
-            android:background="#6F887B7B"
-            android:orientation="vertical"
-            >
+            android:layout_weight="1"
+            android:background="#6F373232"
+            android:orientation="vertical">
 
             <TextView
                 style="@style/Small"
@@ -86,7 +89,13 @@
                 android:layout_height="wrap_content"
                 android:background="#9CC3B6B6"
                 android:text="Płeć:"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:orientation="vertical"></LinearLayout>
 
             <RadioGroup
                 android:id="@+id/radio_group_plec"
@@ -98,14 +107,18 @@
                     style="@style/Medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/male" />
+                    android:text="@string/male"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/radio_button_K"
                     style="@style/Medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/female" />
+                    android:text="@string/female"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
 
             </RadioGroup>
         </LinearLayout>
@@ -114,21 +127,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="488dp"
         android:layout_weight="2"
+        android:background="@drawable/tlo_main"
         android:orientation="vertical">
 
         <TextView
             style="@style/Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:background="#9CE8D9D9"
             android:text="Pierwsze spożycie:"
             android:textAlignment="center" />
 
         <TimePicker
             android:id="@+id/time_picker_start"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:headerBackground="@color/teal_700" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -140,6 +157,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="3sp"
                 android:layout_weight="1"
                 android:text="wroc" />
 
@@ -148,6 +167,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                android:layout_marginLeft="3sp"
+                android:layout_marginRight="5sp"
                 android:layout_weight="1"
                 android:text="dalej" />
         </LinearLayout>

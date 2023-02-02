@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PokazAlko"
-    android:orientation="vertical">
+    android:background="@drawable/pokaz2"
+    android:orientation="vertical"
+    tools:context=".PokazAlko">
+
     <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chartalko"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/chartalko"
-        />
+        android:background="#BEFFFFFF" />
 </LinearLayout>
