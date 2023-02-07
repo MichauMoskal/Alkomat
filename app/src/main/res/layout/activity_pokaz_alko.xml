@@ -1,13 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PokazAlko"
-    android:orientation="vertical">
-    <com.github.mikephil.charting.charts.LineChart
+    android:layout_height="wrap_content">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/chartalko"
-        />
-</LinearLayout>
+        android:background="@drawable/pokaz2"
+        android:orientation="vertical"
+        tools:context=".PokazAlko">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chartalko"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#BEFFFFFF"
+            android:layout_weight="5"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/textViewGramy"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:background="@color/teal_700"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="test"
+                android:layout_weight="1"
+                >
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/textViewCzas"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:background="@color/teal_200"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="test"
+                android:layout_weight="1"
+                >
+            </TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/textViewMax"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:background="@color/teal_700"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="test"
+                android:layout_weight="1"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/button_zakończ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="3sp"
+            android:layout_marginRight="5sp"
+            android:text="zakończ" />
+    </LinearLayout>
+</ScrollView>

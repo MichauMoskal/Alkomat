@@ -44,7 +44,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/buttonKalkulator"
             android:layout_width="303dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -55,7 +55,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonDmuchanie"
             android:layout_width="303dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -66,18 +66,18 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonLatarka"
             android:layout_width="303dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10sp"
             android:backgroundTint="#79A68520"
-            android:text="Odczytywanie tekstu"
+            android:text="Świecidło Betlejemskie"
 
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/buttonRownowaga"
             android:layout_width="303dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
