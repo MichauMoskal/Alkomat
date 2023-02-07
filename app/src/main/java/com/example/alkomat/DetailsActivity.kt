@@ -3,10 +3,9 @@ package com.example.alkomat
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 
-class MainActivity : AppCompatActivity() {
+class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,30 +18,30 @@ class MainActivity : AppCompatActivity() {
 
         val buttonDalej = findViewById<Button>(R.id.button_oblicz)
 
-        var hour= timePicker.hour
+        var hour = timePicker.hour
 
-        waga.minValue=30
-        waga.maxValue=200
+        waga.minValue = 30
+        waga.maxValue = 200
 
 
-        ilePite.minValue=0
-        ilePite.maxValue=12
+        ilePite.minValue = 0
+        ilePite.maxValue = 12
 
 
         var kg = waga.value
-        var plec=false;
+        var plec = false;
 
-        radioButtonK.setOnClickListener{
-            plec=false
+        radioButtonK.setOnClickListener {
+            plec = false
         }
 
-        radioButtonM.setOnClickListener{
-            plec=true
+        radioButtonM.setOnClickListener {
+            plec = true
         }
 
 
         buttonDalej.setOnClickListener {
-            if(radioButtonK.isChecked||radioButtonM.isChecked) {
+            if (radioButtonK.isChecked || radioButtonM.isChecked) {
                 var intentNA = Intent(applicationContext, ListaAlko::class.java)
 
                 intentNA.putExtra("plec", plec)
@@ -53,14 +52,12 @@ class MainActivity : AppCompatActivity() {
                 println("plec: $plec waga: ${waga.value} ilePite: ${ilePite.value} hour: $hour")
                 startActivity(intentNA)
 
-            }
-            else{
-                var message = Toast.makeText(this,"Zaznacz płeć",Toast.LENGTH_LONG)
+            } else {
+                var message = Toast.makeText(this, "Zaznacz płeć", Toast.LENGTH_LONG)
                 message.show()
             }
         }
     }
-
 
 
 }

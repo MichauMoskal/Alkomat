@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dmuchanko">
+    tools:context=".Dmuchanie">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:textColor="#FFFFFF" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/TextViewWynik"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="--"
@@ -40,10 +40,10 @@
             android:textSize="36sp"/>
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/MicrophoneLevelText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Staraj się poprowadzić jednostajny strumień powietrza w kierunku mikrofonu. Po zakończonym pomiarze ujrzysz komunikat"
+            android:text="@string/info"
             android:textColor="#BCB3B3"
             android:textSize="16sp"
             android:layout_marginTop="40sp"
@@ -54,24 +54,23 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginTop="70sp"
+            android:layout_height="200dp"
+            android:layout_marginTop="70dp"
             android:orientation="vertical">
 
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/floatingActionButton"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="131dp"
-                android:layout_marginEnd="130dp"
+                android:id="@+id/StartButton"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:layout_centerInParent="true"
                 android:clickable="true"
                 android:contentDescription="@string/app_name"
                 android:text="ROZPOCZNIJ"
                 android:textAlignment="center"
-                app:backgroundTint="#EA2222" />
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:backgroundTint="#00CCFF" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -86,7 +85,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="5sp"
                 android:layout_marginRight="5sp"
-                android:layout_marginBottom="106dp"
+                android:layout_marginBottom="50sp"
                 android:text="Co najmniej 15 minut przed pomiarem powstrymaj się od spożycia alkoholu, palenia tytoniu oraz jedzenia."
                 android:textAlignment="center"
                 android:textColor="#BCB3B3"

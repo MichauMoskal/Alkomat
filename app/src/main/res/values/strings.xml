@@ -4,4 +4,12 @@
     <string name="male">Mezczyzna</string>
     <string name="female">Kobieta</string>
     <string name="rozpoczecie">Rozpoczęcie picia</string>
+    <string name="info">Staraj się poprowadzić jednostajny strumień powietrza w kierunku mikrofonu. Po zakończonym pomiarze ujrzysz komunikat</string>
+    <string name="dmuchanieGreen">Jesteś w miarę trzeźwy, najwidoczniej nie spożywałeś ostatnio alkoholu.</string>
+    <string name="dmuchanieYellow">Jesteś lekko pijaniejki. Zanim siądziesz za kierownicą udaj się na najbliższy komisariat w celu przebadania.</string>
+    <string name="dmuchanieRed">Żyjesz? HALO. Połóż się i przygotuj zapas wody, bo poranek może być ciężki.</string>
+
+    <string name="rownowagaGreen">Gratulacje jesteś trzeźwy.</string>
+    <string name="rownowagaYellow">Możesz być lekko nietrzeźwy. Uważaj na okoliczne rowy.</string>
+    <string name="rownowagaRed">Astrologowie ogłaszają\nPopulacja zwalajców zwiększa się</string>
 </resources>

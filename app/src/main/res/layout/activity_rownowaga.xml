@@ -20,7 +20,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="146dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -35,13 +35,27 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/textViewWynikRow"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="29sp"
-                android:text="TextView"
-                android:textSize="28sp"
+                android:text="Wynik"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="20sp"
                 android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/textViewOpis"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="29sp"
+                android:text="Wykonaj kilka kroków podczas 3 sekundowego pomiaru."
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textAlignment="center"
+                />
         </LinearLayout>
 
         <RelativeLayout
@@ -52,18 +66,15 @@
 
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/floatingActionButton"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="131dp"
-                android:layout_marginEnd="130dp"
+                android:id="@+id/buttonBalans"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:layout_centerHorizontal="true"
                 android:clickable="true"
                 android:contentDescription="@string/app_name"
                 android:text="ROZPOCZNIJ"
                 android:textAlignment="center"
-                app:backgroundTint="#EA2222" />
+                app:backgroundTint="#00CCFF" />
 
         </RelativeLayout>
 

@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textViewLatarka"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"
@@ -27,20 +27,8 @@
             android:textSize="28sp"
             android:textStyle="bold" />
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="179dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="35sp"
-            android:text="Auto_swiecidło"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-
-            />
-
-        <Button
+        <ToggleButton
+            android:id="@+id/ButtonSwiatlo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -54,7 +42,6 @@
             android:paddingTop="15dp"
             android:paddingEnd="25dp"
             android:paddingBottom="15dp"
-            android:text="Uruchom Latarkę"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="17sp"

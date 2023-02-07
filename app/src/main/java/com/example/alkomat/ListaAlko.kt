@@ -56,11 +56,11 @@ class ListaAlko : AppCompatActivity() {
             }
 
             var intentOblicz = Intent(applicationContext, PokazAlko::class.java)
-            intentOblicz.putExtra("plec",plec);
-            intentOblicz.putExtra("waga",waga);
-            intentOblicz.putExtra("ilePite",ilePite);
-            intentOblicz.putExtra("hour",hour);
-            intentOblicz.putExtra("alkCal",alkCal);
+            intentOblicz.putExtra("plec", plec);
+            intentOblicz.putExtra("waga", waga);
+            intentOblicz.putExtra("ilePite", ilePite);
+            intentOblicz.putExtra("hour", hour);
+            intentOblicz.putExtra("alkCal", alkCal);
             startActivity(intentOblicz)
         }
 

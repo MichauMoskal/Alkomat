@@ -1,8 +1,11 @@
 package com.example.alkomat
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.components.YAxis
@@ -13,7 +16,7 @@ import com.github.mikephil.charting.formatter.ValueFormatter
 // zmienna globalna dla klasy, aby przekazac godziny do labelu osi x
 private lateinit var entries: ArrayList<Entry>
 
-data class BACAtTime(val bac: Double,val time: String) {
+data class BACAtTime(val bac: Double, val time: String) {
 }
 
 class TimeXAxisValueFormatter(private val entries: ArrayList<Entry>) : ValueFormatter() {
@@ -24,10 +27,16 @@ class TimeXAxisValueFormatter(private val entries: ArrayList<Entry>) : ValueForm
 }
 
 class PokazAlko : AppCompatActivity() {
+    var textViewMax: TextView? = null
+    var textViewCzas: TextView? = null
+    var textViewCzysty: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pokaz_alko)
-
+        textViewCzas=findViewById(R.id.textViewCzas)
+        textViewCzysty=findViewById(R.id.textViewGramy)
+        textViewMax=findViewById(R.id.textViewMax)
+        val buttonZakoncz=findViewById<Button>(R.id.button_zakończ)
 
         //get all extras from previous class
         val plec = intent.getBooleanExtra("plec", true)
@@ -36,9 +45,11 @@ class PokazAlko : AppCompatActivity() {
         val rozpoczecie = intent.getIntExtra("hour", 0)
         val alkCal = intent.getDoubleExtra("alkCal", 0.0)
 
+        textViewCzysty!!.setText("Wypiłeś $alkCal gram czystego alkoholu")
+
         val chart = findViewById<LineChart>(R.id.chartalko)
 
-        val data = LineData(getLineDataSet(liczPromile(plec,waga,ilePite,rozpoczecie,alkCal)))
+        val data = LineData(getLineDataSet(liczPromile(plec, waga, ilePite, rozpoczecie, alkCal)))
         chart.data = data
         chart.setTouchEnabled(true)
         chart.setDrawGridBackground(false)
@@ -55,7 +66,7 @@ class PokazAlko : AppCompatActivity() {
         val leftAxis = chart.axisLeft
         leftAxis.valueFormatter = object : ValueFormatter() {
             override fun getFormattedValue(value: Float): String {
-                return "${Math.round(value* 1000).toFloat() / 1000} %"
+                return "${Math.round(value * 1000).toFloat() / 1000} %"
             }
         }
         leftAxis.setLabelCount(8, false)
@@ -67,6 +78,12 @@ class PokazAlko : AppCompatActivity() {
 
 //        chart.animateX(1000)
         chart.invalidate()
+
+        buttonZakoncz.setOnClickListener{
+            var intentZakoncz = Intent(applicationContext, Menu::class.java)
+            startActivity(intentZakoncz)
+        }
+
     }
 
     //obliczanie promili w odstępie pół godziny
@@ -80,10 +97,10 @@ class PokazAlko : AppCompatActivity() {
         // lista poszczegolnych faz picia alkoholu
         val arrList = ArrayList<BACAtTime>()
         //liczba iteracji (co pol godziny wiec razy 2)
-        val iterations = ilePite * 2
+        var iterations = ilePite * 2
         //wspolczynnik wchlaniania
         val const: Double
-        var czas = rozpoczecie*1.00
+        var czas = rozpoczecie * 1.00
         var strTime: String
         if (plec == true)
             const = 0.73
@@ -95,21 +112,17 @@ class PokazAlko : AppCompatActivity() {
         if (ilePite > 0) {
             for (i in 1..iterations) {
                 //licz promile
-                BAC += ((alkCal / iterations)) / (waga * const) - (0.15/2)
-                if(BAC<0)
-                    BAC=0.00
-                czas+= 0.5
-                czas=czas%24
-                if(czas%1==0.0)
-                {
-                    strTime="${czas.toInt()}:00"
-                }
-                else{
-                    strTime="${czas.toInt()}:30"
+                BAC += ((alkCal / iterations)) / (waga * const) - (0.15 / 2)
+                if (BAC < 0)
+                    BAC = 0.00
+                czas += 0.5
+                czas = czas % 24
+                if (czas % 1 == 0.0) {
+                    strTime = "${czas.toInt()}:00"
+                } else {
+                    strTime = "${czas.toInt()}:30"
                 }
                 arrList.add(BACAtTime(BAC, strTime))
-                print("$strTime  ")
-                println("$BAC+\n")
 
             }
         }
@@ -117,26 +130,34 @@ class PokazAlko : AppCompatActivity() {
         else {
             BAC = ((alkCal) * 5.14) / (waga * const)
         }
+        textViewMax!!.setText("Największe stężenie: ${String.format("%.2f", BAC)}‰")
         println("Skonczono picie\n")
         //obliczanie promili podczas trzezwienia
-        do{
-            BAC -= (0.15)/2
-            czas+= 0.5
-            czas=czas%24
+        do {
+            iterations++
+            BAC -= (0.15) / 2
+            czas += 0.5
+            czas = czas % 24
             if (BAC < 0)
                 BAC = 0.0
-            if(czas%1==0.0)
-            {
-                strTime="${czas.toInt()}:00"
-            }
-            else{
-                strTime="${czas.toInt()}:30"
+            if (czas % 1 == 0.0) {
+                strTime = "${czas.toInt()}:00"
+            } else {
+                strTime = "${czas.toInt()}:30"
             }
             arrList.add(BACAtTime(BAC, strTime))
             print("$strTime  ")
             println("$BAC+\n")
 
-        }while (BAC > 0)
+        } while (BAC > 0)
+
+
+        if (iterations % 1 == 0) {
+            strTime = "${iterations/2}:00"
+        } else {
+            strTime = "${iterations/2}:30"
+        }
+        textViewCzas!!.setText("Od rozpoczęcia picia trzeźwiałeś: ${strTime} godzin")
         println("Skonczono Trzezwienie\n")
         return arrList
     }
@@ -147,11 +168,11 @@ class PokazAlko : AppCompatActivity() {
             val (bac, time) = lista[i]
             entries.add(Entry(i.toFloat(), bac.toFloat(), time))
         }
-        val set = LineDataSet(entries, "Data Set")
-        set.color = Color.rgb(255, 255, 255)
-        set.valueTextSize = 10f
+        val set = LineDataSet(entries, "Promile w czasie")
+        set.color = Color.rgb(0, 0, 255)
+        set.valueTextSize = 9f
         set.valueFormatter = DefaultValueFormatter(2)
-        set.valueTextColor = Color.BLACK
+        set.valueTextColor = Color.MAGENTA
         return set
     }
 }
